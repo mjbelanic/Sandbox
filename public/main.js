@@ -1,6 +1,11 @@
 $(document).ready(function() {
+	$(this).scrollTop(0);
 	$(".enter").click(function() {
 		unlock($(".enter"));
+	});
+	$(".navLink").click(function() {
+		$(".navLink").removeClass("active");
+		$(this).addClass("active");
 	});
 });
 
@@ -16,6 +21,7 @@ function open(left, right, button) {
 			TweenLite.to($(".navbar"), 1.5, {
 				top: "0px"
 			});
+			$("html").css({ overflow: "scroll" });
 		}
 	});
 }
